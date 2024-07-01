@@ -15,5 +15,8 @@ class ProjectVariety(models.Model):
     description = models.TextField()
     image = models.ImageField(upload_to="img/")
     date_added = models.DateTimeField(default=timezone.now)
-    type = models.CharField(max_length=2, choices=PROJECT_TYPE)
+    type = models.CharField(max_length=100, choices=PROJECT_TYPE)
+    
+    def __str__(self):
+        return self.name
     
