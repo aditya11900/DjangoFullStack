@@ -12,7 +12,7 @@ class ProjectVariety(models.Model):
         ('other', 'Other Development'),
     ]
     name = models.CharField(max_length=100)
-    description = models.TextField()
+    description = models.TextField(default="")
     image = models.ImageField(upload_to="img/")
     date_added = models.DateTimeField(default=timezone.now)
     type = models.CharField(max_length=100, choices=PROJECT_TYPE)

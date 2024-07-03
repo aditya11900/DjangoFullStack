@@ -8,18 +8,20 @@ Project Page
 <h1>home page of project | project </h1>
 
 <div class="grid grid-cols-3 gap-4 m-4">
+
     {% for project in projects  %}
-<div class="bg-blue-800 p-4 m-4 rounded">
-    <h2>{{ project.title }}</h2>
+<div class="bg-blue-800 p-5 rounded">
+    <h3 class=" text-2xl font-bold">{{ project.name }}</h2>
     <p class="text-sm font-bold">{{ project.description }}</p>
     <img class="rounded shadow-lg" src="{{project.image.url}}" alt="">
-    <a href="#">
+    <a href="{% url 'project_detail' project.id %}">
         <button 
         type="button"
-        class="bg-blue-500 text-white rounded bg-orange-600 hover:bg-orange-700 inline-flex items-center w-[100%] justify-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white ">
+        class="bg-orange-600 hover:bg-orange-700 text-white roundedhover:bg-orange-700 inline-flex items-center w-[100%] justify-center px-4 py-2 border border-transparent text-sm font-medium">
             {{project.type}} - {{project.id}}
         </button>
     </a>
+</div>
 {% endfor  %}
 </div>
 
